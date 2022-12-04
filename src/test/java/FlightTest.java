@@ -27,7 +27,7 @@ public class FlightTest {
 
         ArrayList<Passenger> bookings = new ArrayList<>();
         pilot = new Pilot("Stephen", Rank.CAPTAIN, 64826);
-        flight = new Flight(crewMembers, bookings, "JA7579");
+        flight = new Flight(crewMembers, bookings, "JA7579", "GLA", "ORY", "11.55");
 
     }
 
@@ -35,6 +35,22 @@ public class FlightTest {
         public void doesFlightHaveANumber(){
             assertEquals("JA7579", flight.getFlightNumber());
         }
+
+        @Test
+        public void doesFlightHaveDepartureAirport(){
+            assertEquals("GLA", flight.getDepartureAirport());
+        }
+
+        @Test
+        public void doesFlightHaveDestinationAirport(){
+            assertEquals("ORY", flight.getDestinationAirport());
+        }
+
+        @Test
+        public void doesFlightHaveDepartureTime(){
+            assertEquals("11.55", flight.getDepartureTime());
+        }
+
 
 
     }
