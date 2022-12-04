@@ -80,7 +80,7 @@ public class Flight {
         return this.plane.getType().getCapacity();
     }
     public int getAvailablePlaneSeats(){
-        return this.plane.getType().getCapacity() - getPassengerCount();
+        return getSeats() - getPassengerCount();
     }
 
     public void bookPassenger(Passenger passenger) {

@@ -39,7 +39,7 @@ public class FlightTest {
         ArrayList<Pilot> pilotList = new ArrayList<>();
         pilotList.add(pilot);
 
-        flight = new Flight(crewMembers, bookings, pilotList, "JA7579", "GLA", "ORY", "11.55", plane);
+        flight = new Flight(crewMembers, bookings, pilotList, "JA7579", "GLA", "HND", "11.55", plane);
 
     }
 
@@ -55,7 +55,7 @@ public class FlightTest {
 
         @Test
         public void doesFlightHaveDestinationAirport(){
-            assertEquals("ORY", flight.getDestinationAirport());
+            assertEquals("HND", flight.getDestinationAirport());
         }
 
         @Test
@@ -95,9 +95,10 @@ public class FlightTest {
 
         @Test
         public void bookPassengerIfRemainingSeats(){
-        passenger = new Passenger("Maya", 3);
+        passenger = new Passenger("Takako", 3);
         flight.bookPassenger(passenger);
         assertEquals(1, flight.getPassengerCount());
+        assertEquals(365, flight.getAvailablePlaneSeats());
 
         }
 
